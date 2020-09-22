@@ -1,3 +1,5 @@
 Hello!!!
 
 Hello Jupiter! Welcome to Codeup!
+
+Plants are cool
