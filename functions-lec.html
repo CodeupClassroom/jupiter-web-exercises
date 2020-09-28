@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+	<title>JS W/ HTML</title>
+
+	<style>
+		body{
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.container{
+			width: 80%;
+			margin: auto;
+		}
+
+		ul {
+			list-style-type: circle;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>JAVASCRIPT Functions</h1>
+</div>
+
+<script>
+	"use strict";
+	/* **************************************
+		      Function Examples
+	 ****************************************/
+
+	function add(x = 1,y = 2){
+		//console.log(x + y);
+		return x + y;
+	}
+
+	function subtract(x,y){
+		//console.log(x + y);
+		return x - y;
+	}
+
+	// What we pass into these function calls are 'arguments'
+	add(1,2);
+	subtract(5,4);
+
+	//TODO: Answer this question. What is the difference between a function return vs console log?
+
+	var multiply = function (x,y) {
+		return x * y;
+	}
+
+	// If the function has a return, the call itself can be assigned to a variable to store the value.
+	var product = multiply(6,7);
+
+	//TODO: create a 'divide' function that divides two parameters
+
+	/* **************************************
+          	Arguments & Parameters
+	 ****************************************/
+
+	//TODO: Answer these questions. How many parameters are in our 'add' function? How many arguments?
+	//TODO: Modify the add and subtract functions to use default parameters.
+
+	/* **************************************
+          	Global & Local Variables
+ 	****************************************/
+
+	var name = "Sophie";
+	var day = "Monday";
+
+	function greeting(){
+		var username = "Vivian";
+		return "Hi " + username + "!";
+	}
+
+	console.log(name);
+	console.log(username);
+
+	//TODO: Describe what is happening with the above console logs.
+	//TODO: What happens if the variables are the same name? Test it out.
+
+
+	function checkName(){
+		var day = "Tuesday";
+		console.log(day);
+	}
+
+	//TODO: Which day will log to the console? Call the function to test it.
+
+</script>
+</body>
+</html>
