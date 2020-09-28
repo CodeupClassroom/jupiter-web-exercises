@@ -15,5 +15,6 @@ function sayHello(name){
 
 sayHello("Vivian");
 sayHello("Sophie");
+//this is a comment
 
 
