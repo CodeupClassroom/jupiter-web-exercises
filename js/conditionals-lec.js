@@ -379,52 +379,53 @@ function checkIntersectionLight(lightColor){
 // console.log(message);
 
 
-
-
-
-
-
-
 //TODO: Refactor the following conditional as a ternary
 
 // var weather = "sunny";
 // var weatherMessage;
-
+//
 // if(weather === "rainy"){
 //    weatherMessage = "It's raining!";
 // } else {
 //     weatherMessage = "Have a nice day!";
 // }
 
-//WRITE YOUR TERNARY STATEMENT HERE!
+
+
+// var weatherMessage = (weather === "rainy") ? "It's raining!" : "Have a nice day";
+// console.log(weatherMessage); // When weather is sunny, should see have a nice day
+
+
+
+
+
+
 
 
 
 // =============== SWITCH STATEMENT ================
 //TODO Together:
 
-var pizzaPreference = prompt("What kind of pizza do you like?");
-
-
-switch(pizzaPreference) {
-    case "pineapple and hot sauce":
-        alert("What a coincidence, that's my favorite!");
-        break;
-    case "cheese":
-        alert("Just plain cheese? Okay...");
-        break;
-	case "ham":
-		alert("ham is great");
-		break;
-	case "mushroom":
-		alert("i love mushrooms!");
-		break;
-    default:
-        alert(pizzaPreference + " isn't my favorite, but let's order some!");
-        break;
-}
-
-
+// var pizzaPreference = prompt("What kind of pizza do you like?");
+//
+//
+// switch(pizzaPreference) {
+//     case "pineapple and hot sauce":
+//         alert("What a coincidence, that's my favorite!");
+//         break;
+//     case "cheese":
+//         alert("Just plain cheese? Okay...");
+//         break;
+// 	case "ham":
+// 		alert("ham is great");
+// 		break;
+// 	case "mushroom":
+// 		alert("i love mushrooms!");
+// 		break;
+//     default:
+//         alert(pizzaPreference + " isn't my favorite, but let's order some!");
+//         break;
+// }
 
 
 
@@ -432,8 +433,66 @@ switch(pizzaPreference) {
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
+// var weather = "windy";
+// // Windy => default case
+//
+// switch(weather){
+// 	case "rainy":
+// 		alert("Take an umbrella!");
+// 		break;
+// 	case "sunny":
+// 		alert("It's a hot day today");
+// 		break;
+// 	case "snow":
+// 		alert("Brr its cold today");
+// 		break;
+// 	default:
+// 		alert("Have a great day!");
+// 		break;
+// }
+
+
+
+
+
+
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
+function checkIntersection(lightColor){
+	switch(lightColor){
+		case "green":
+			return "keep going";
+		case "yellow":
+			return "slow down";
+		case "red":
+			return "stop!";
+		default:
+			return "proceed with caution";
+	}
+}
+
+
+function checkIntersection(lightColor){
+	var returnMessage;
+
+	switch(lightColor){
+		case "green":
+			returnMessage = "keep going";
+			break;
+		case "yellow":
+			returnMessage = "slow down";
+			break;
+		case "red":
+			returnMessage = "stop!";
+			break;
+		default:
+			returnMessage = "proceed with caution";
+			break;
+	}
+
+	return returnMessage;
+}
+
 
 
 
