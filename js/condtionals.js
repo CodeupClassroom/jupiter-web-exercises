@@ -63,16 +63,6 @@ console.log(analyzeColor(randomColor));
  */
 
 
-
-
-
-/**
- * TODO:
- * Prompt the user for a color when the page loads, and pass the input from the
- * user to your `analyzeColor` function. Alert the return value from your
- * function to show it to the user.
- */
-
 function analyzeColorSwitch(color){
 
 	switch (color) {
@@ -114,6 +104,17 @@ console.log(analyzeColorSwitch(randomColor));
 
 
 
+
+/**
+ * TODO:
+ * Prompt the user for a color when the page loads, and pass the input from the
+ * user to your `analyzeColor` function. Alert the return value from your
+ * function to show it to the user.
+ */
+
+
+var userColor = prompt("Please enter a color");
+alert(analyzeColorSwitch(userColor));
 
 
 
