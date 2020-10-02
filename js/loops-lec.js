@@ -56,19 +56,19 @@
 //TODO: Create a while loop that counts down from 50 to 1 (inclusive) in increments of 1:
 // (50, 49, 48, 47, 46 .... 1)
 
-var i = 50;
-while(i >= 1){
-    console.log(i);
-    i--;
-}
+// var i = 50;
+// while(i >= 1){
+//     console.log(i);
+//     i--;
+// }
 
 //TODO TOGETHER: Create a while loop that asks the user to confirm: "Would you like to exit?"
 
-var myQuestion;
-
-while(!myQuestion){
-    myQuestion = confirm("Would you like to exit?");
-}
+// var myQuestion;
+//
+// while(!myQuestion){
+//     myQuestion = confirm("Would you like to exit?");
+// }
 
 /*********************************************
  *               DO-WHILE LOOPS
@@ -89,18 +89,50 @@ while(!myQuestion){
 
 
 // TODO TOGETHER: Why doesnt the example above run?
-
+    // >> Answer: Because i < 10 is never true
 
 // TODO TOGETHER: Refactor the example above using a do-while loop. What behavior do we notice?
+
+    // var i = 0;
+// while(i < 10){
+//     console.log(i);
+//     i++;
+// }
+
+// var i = 10;
+// do{
+//     console.log(i);
+//     i++;
+// }while(i < 10);
 
 
 //TODO TOGETHER: Create a do-while loop that asks the user to confirm: "Would you like to exit?" What difference do you notice?
 
+// do{
+//     var myOtherQuestion = confirm("Would you like to exit?");
+// }while(myOtherQuestion === false);
+
 //TODO TOGETHER: Create a do-while loop that counts up to 20 (inclusive) by 2s (0, 2, 4...)
 // (0, 2, 4...20)
 
+    // while(i <= 20){
+//     console.log(i);
+//     // shorthand operator for addition and reassignment
+//     i+=2;
+// }
+
+var i = 0;
+do{
+    console.log(i);
+    i+=2;
+}while(i <= 20);
 
 //TODO: Create a do-while loop that prompts the user for a color and continues to prompt until the string passed is "blue"
+
+do{
+    var myColor = prompt("Your favorite color?").toLowerCase();
+}while(myColor !== "blue");
+alert("Blue is my favorite color too!");
 
 
 /*********************************************
