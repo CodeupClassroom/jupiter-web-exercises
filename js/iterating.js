@@ -84,7 +84,7 @@
 	console.log("========== 2ND FUNCTION ==========");
 	console.log(second(names));
 
-	console.log("========== LAST FUNCTION ==========");
+	console.log("========== LAST FUNCTION ===========");
 	console.log(last(names));
 
 
