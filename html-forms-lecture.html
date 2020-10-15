@@ -142,20 +142,35 @@
     <!-- Input types: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input -->
 	<form method="GET" action="https://hookb.in/wND6QJwe82Iz88VDy6o2">
 
+		<!--
+
+			Standard Input Elements
+				Text Input
+				Password Input
+				Hidden Input
+				Other Types: email, number, date, etc. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+			Textarea
+			Checkboxes
+			Radio Buttons
+			Select/Dropdown Input
+			Required/Disabled Attributes
+
+		-->
+
+
 		<!-- Text -->
 		<h4>Text Input</h4>
 		<label for="movie">Favorite movie</label>
 		<input id="movie" type="text" name="movie" placeholder="Enter favorite movie">
 
-		<!-- Email -->
-		<h4>Email Input</h4>
-		<label for="email">Email</label>
-		<input id="email" type="email" name="email" placeholder="Enter email address">
-
 		<!-- Password -->
 		<h4>Password Input</h4>
 		<label for="password">Password</label>
 		<input id="password" type="password" name="password" placeholder="Enter password">
+
+		<!-- Hidden Inputs -->
+		<h4>Hidden Inputs</h4>
+		<input type="hidden" name="user_id" value="432">
 
 		<!-- Text area -->
 		<h4>Textarea Input</h4>
@@ -192,7 +207,6 @@
 			<br>
 		</fieldset>
 
-
 		<!-- Selects (with or without multiple option) -->
         <h4>Select Inputs</h4>
 		<label for="coffee-preference">Coffee Preference</label>
@@ -201,10 +215,6 @@
 		    <option value="dark">Dark Roast</option>
 		    <option value="espresso">Espresso Blend</option>
 		</select>
-
-		<!-- Hidden Inputs -->
-        <h4>Hidden Inputs</h4>
-		<input type="hidden" name="user_id" value="432">
 
 		<!-- Required -->
 		<label for="firstName">First Name</label>
