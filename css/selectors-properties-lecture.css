@@ -16,7 +16,7 @@
 */
 
 /*body {*/
-    /*font-family: "Comic Sans MS";*/
+/*    font-family: "Comic Sans MS";*/
 /*}*/
 
 
@@ -27,7 +27,7 @@
 */
 
 /*#comic {*/
-    /*font-family: "Comic Sans MS";*/
+/*    font-family: "Comic Sans MS";*/
 /*}*/
 
 
@@ -38,7 +38,20 @@
 */
 
 /*.comic {*/
-    /*font-family: "Comic Sans MS";*/
+/*    font-family: "Comic Sans MS";*/
+/*    background-color: purple;*/
+/*}*/
+
+/*ol {*/
+/*    background: red;*/
+/*}*/
+
+/*.blue {*/
+/*    background: blue;*/
+/*}*/
+
+/*#purple {*/
+/*    background: purple;*/
 /*}*/
 
 
@@ -54,9 +67,9 @@
 */
 
 
-/*p, h1 {*/
-    /*font-family: "Comic Sans MS";*/
-    /*color: red;*/
+/*p, .comic {*/
+/*    font-family: "Comic Sans MS";*/
+/*    color: red;*/
 /*}*/
 
 
@@ -75,12 +88,13 @@
 */
 
 /*.class1 {*/
-    /*color: blue;*/
+/*    color: blue;*/
 /*}*/
 
 /*.class2 {*/
-    /*background: red;*/
+/*    color: red;*/
 /*}*/
+
 
 
 
@@ -93,7 +107,7 @@
 */
 
 /*main p {*/
-    /*background: purple;*/
+/*    background: purple;*/
 /*}*/
 
 
@@ -107,7 +121,7 @@
 */
 
 /*main>p {*/
-    /*background: purple;*/
+/*    background: purple;*/
 /*}*/
 
 
@@ -120,8 +134,8 @@
 */
 
 /*p.comic {*/
-    /*font-family: "Comic Sans MS";*/
-    /*color: red;*/
+/*    font-family: "Comic Sans MS";*/
+/*    color: red;*/
 /*}*/
 
 
@@ -139,20 +153,20 @@
 /* -----------  PSEUDO CLASSES */
 
 /*a:link {*/
-    /*font-size: 10px;*/
+/*    font-size: 10px;*/
 /*}*/
 
 /*a:visited {*/
-    /*font-size: 20px;*/
+/*    font-size: 20px;*/
 /*}*/
 
 /*a:hover {*/
-    /*font-size: 30px;*/
+/*    font-size: 30px;*/
 /*}*/
 
 /*a:active {*/
-    /*font-size: 40px;*/
-    /*color: black;*/
+/*    font-size: 40px;*/
+/*    color: black;*/
 /*}*/
 
 
@@ -230,9 +244,9 @@ h1 {
 
 */
 
-body {
-    font-size: 1em;
-}
+/*body {*/
+/*    font-size: 1em;*/
+/*}*/
 
 h1 {
     /*font-size: 64px;*/
