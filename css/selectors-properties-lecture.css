@@ -1,0 +1,274 @@
+/* *************************** SELECTORS *************************** */
+
+/* ----------- BASIC SELECTORS */
+
+/*
+    selector {
+        property: value;
+    }
+*/
+
+
+/*
+    element {
+        property: value;
+    }
+*/
+
+/*body {*/
+    /*font-family: "Comic Sans MS";*/
+/*}*/
+
+
+/*
+    #id { AVOID THIS
+        property: value;
+    }
+*/
+
+/*#comic {*/
+    /*font-family: "Comic Sans MS";*/
+/*}*/
+
+
+/*
+    .class {
+        property: value;
+    }
+*/
+
+/*.comic {*/
+    /*font-family: "Comic Sans MS";*/
+/*}*/
+
+
+
+
+
+/* ----------- MULTIPLE SELECTORS */
+
+/*
+    selector, selector {
+        property: value;
+    }
+*/
+
+
+/*p, h1 {*/
+    /*font-family: "Comic Sans MS";*/
+    /*color: red;*/
+/*}*/
+
+
+
+/* ----------- COMBINING SELECTORS */
+
+/*
+    someSelector {
+        property: value;
+    }
+
+    anotherSelector {
+        property: value;
+    }
+
+*/
+
+/*.class1 {*/
+    /*color: blue;*/
+/*}*/
+
+/*.class2 {*/
+    /*background: red;*/
+/*}*/
+
+
+
+/* ----------- DESCENDANT SELECTOR  */
+
+/*
+    selectorParent selectorChild {
+        property: value;
+    }
+*/
+
+/*main p {*/
+    /*background: purple;*/
+/*}*/
+
+
+
+/* ----------- DIRECT CHILD SELECTOR  */
+
+/*
+    selectorParent>directChild {
+        property: value;
+    }
+*/
+
+/*main>p {*/
+    /*background: purple;*/
+/*}*/
+
+
+/* ----------- COMBINING SELECTORS  */
+
+/*
+    element.aClassName {
+        property: value;
+    }
+*/
+
+/*p.comic {*/
+    /*font-family: "Comic Sans MS";*/
+    /*color: red;*/
+/*}*/
+
+
+/*
+    element#anIdName {
+        property: value;
+    }
+*/
+
+/*h3#comic {background: blue}*/
+
+
+
+
+/* -----------  PSEUDO CLASSES */
+
+/*a:link {*/
+    /*font-size: 10px;*/
+/*}*/
+
+/*a:visited {*/
+    /*font-size: 20px;*/
+/*}*/
+
+/*a:hover {*/
+    /*font-size: 30px;*/
+/*}*/
+
+/*a:active {*/
+    /*font-size: 40px;*/
+    /*color: black;*/
+/*}*/
+
+
+
+/* *************************** PROPERTIES *************************** */
+
+/* color ===================================================== */
+
+body {
+    /*background: lime;*/
+    /*background: #00ff00;*/
+    /*background: #000;*/
+    /*background: rgb(0, 255, 0);*/
+    /*opacity: .2;*/
+    /*background: rgba(0, 255, 0, 1);*/
+}
+
+
+/*text-decoration*/
+
+/*h1 {*/
+    /*text-decoration: overline;*/
+    /*text-decoration: line-through;*/
+    /*text-decoration: underline;*/
+/*}*/
+
+
+/*text-align*/
+
+/*h1 {*/
+    /*!*text-align: center;*!*/
+    /*!*text-align: right;*!*/
+/*}*/
+
+
+/* =====================================================
+    font-family HUGE TOPIC!!!
+
+    web safe fonts vs. web fonts
+
+    general font categories: serif, sans-sarif, monospaced
+
+    the font-family property normally is set to a a list of fonts from most preferred to most web-safe
+
+    Example font stacks - https://www.cssfontstack.com/
+
+*/
+
+h1 {
+    /*Sans-serif*/
+    /*font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;*/
+    /*font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";*/
+    /*Serif*/
+    /*font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;*/
+    /*font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;*/
+}
+
+
+
+/*font-style*/
+
+/*h1 {*/
+    /*!*font-style: normal;*!*/
+    /*!*font-style: italic;*!*/
+    /*!*font-style:oblique;*!*/
+/*}*/
+
+
+/*
+     font-size
+
+     px units good for accuracy but not very accessible
+     em scale well but can compound in size
+     rem is fixes compounding problem
+
+*/
+
+body {
+    font-size: 1em;
+}
+
+h1 {
+    /*font-size: 64px;*/
+    /*font-size: 4em;*/
+}
+
+
+
+/*font-weight*/
+
+/*h1 {*/
+    /*!*font-weight: bold;*!*/
+    /*!*font-weight: normal;*!*/
+/*}*/
+
+
+
+/*background-image*/
+
+/*body {*/
+    /*!*background-image: url("https://uproxx.files.wordpress.com/2014/11/wlgrumpycat.jpg?quality=100&w=650");*!*/
+    /*!*background-repeat: no-repeat;*!*/
+    /*!*background-size: cover;*!*/
+/*}*/
+
+
+/*list-style*/
+
+/*ol {*/
+    /*!*list-style-type: georgian;*!*/
+    /*!*list-style-type: katakana;*!*/
+    /*!*list-style-type: armenian;*!*/
+/*}*/
+
+/*ul {*/
+    /*!*list-style-type: circle;*!*/
+    /*!*list-style-type: disc;*!*/
+    /*!*list-style-type: square;*!*/
+/*}*/
