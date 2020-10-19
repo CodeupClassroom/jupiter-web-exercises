@@ -1,0 +1,68 @@
+:root {
+    --main-bg: #E6ECF0;
+    --link-color: #3B94D9;
+    --main-link-color: #848487;
+    --light-bg: #FFF;
+    --separator-color: #DDD;
+}
+* {
+    box-sizing: border-box;
+}
+body, html {
+    background-color: var(--main-bg);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+header {
+    background-image: url("https://picsum.photos/1200/300");
+    background-size: cover;
+    min-height: 300px;
+    padding-top: 275px;
+}
+a {
+    color: var(--link-color);
+}
+.top-nav {
+    background: var(--light-bg);
+}
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-link {
+    color: var(--main-link-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+.nav-link:hover {
+    color: var(--link-color);
+}
+.profile {
+    background: var(--light-bg);
+}
+.btn {
+    border: 1px solid var(--main-link-color);
+    color: var(--main-link-color);
+    background: var(--light-bg);
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+}
+.btn-large {
+    font-size: 1.3em;
+    padding: 10px;
+}
+.img-circle {
+    border-radius: 100%;
+    border: 4px solid var(--light-bg);
+}
+.text-right {
+    text-align: right;
+}
+.text-muted {
+    color: var(--main-link-color);
+}
