@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+
+			/* A common approach to dealing with different box-sizing properties. Usually we will use border-box*/
+			/*box-sizing: border-box;*/
+		}
+
+		body, html {
+			height: 100%;
+			width: 100%;
+		}
+
+		#box-1{
+			background: lightblue;
+			width: 400px;
+			height: 300px;
+			border: 10px solid black;
+
+			/* TODO: Add padding & margin. Experiment with different syntax. */
+
+			/*Padding all around*/
+			padding: 20px;
+
+			/*margin: 50px;*/
+
+
+			/* Top/Bottom, Left/Right */
+			/*padding: 10px 30px;*/
+
+
+
+			/* Top, right, bottom, left */
+			/*padding: 10px 30px 50px 70px;*/
+
+
+
+
+
+
+
+
+
+			/* TODO: Calculate total width and height */
+
+		}
+
+		#box-2{
+			background: lightgreen;
+			width: 400px;
+			height: 300px;
+			border: 10px solid black;
+			padding: 20px;
+			box-sizing: border-box;
+			margin: 10px;
+
+			/* TODO: Add padding & margin. Experiment with different syntax.	*/
+
+
+			/* TODO: Change box-sizing to border-box	*/
+
+			/* TODO: Calculate total width and height */
+
+
+
+		}
+	</style>
+
+</head>
+<body>
+
+<h1>Box Model</h1>
+
+<div id="box-1">
+	<p>Box1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci alias atque id odio porro quaerat sit ullam. Assumenda laudantium officia placeat quia sint vero voluptates! Delectus impedit ipsa velit!</p>
+</div>
+
+<div id="box-2">
+	<p>Box2: Border Box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci alias atque id odio porro quaerat sit ullam. Assumenda laudantium officia placeat quia sint vero voluptates! Delectus impedit ipsa velit!</p>
+</div>
+
+
+</body>
+</html>
