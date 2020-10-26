@@ -43,6 +43,28 @@
         nav a:hover {
             color: blue;
         }
+
+        /*  BONUS  */
+
+        nav ul {
+            position: relative;
+        }
+
+        nav li:nth-child(4) {
+            margin-right: auto;
+        }
+
+        .logo {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            text-align: center;
+        }
+
+        nav li:not(.logo) {
+            z-index: 1;
+        }
+
     </style>
 </head>
 <body>
