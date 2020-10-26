@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Nav</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        nav {
+            height: 4.25em;
+            background: lightgray;
+        }
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        nav li:not(.logo) {
+            padding: 1em;
+        }
+        .logo {
+            margin: 0 auto;
+            font-size: 3em;
+            font-family: 'Montserrat', sans-serif;
+        }
+        nav li {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 800;
+        }
+        nav a {
+            color: black;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Market</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li class="logo"><a href="#">Logo</a></li>
+        <li><a href="#">Follow Us</a></li>
+        <li><a href="#"><i class="fa fa-search"></i></a></li>
+        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+        <li><a href="#"><i class="fa fa-user-circle"></i></a></li>
+    </ul>
+</nav>
+
+</body>
+</html>
