@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM Lesson</title>
+</head>
+<body>
+    <h1>This is the BOM</h1>
+
+    <script>
+
+        (function(){
+            "use strict";
+
+        //    TODO: Write a setInterval()
+
+            var count = 0;
+            var max = 10;
+            var interval = 1000;
+
+            var intervalId = setInterval(function(){
+                if(count >= max){
+                    // clearInterval does NOT exit this block of code
+                    console.log('All done.');
+                    clearInterval(intervalId);
+                } else {
+                    count++;
+                    console.log("Repeating this line" + count);
+                }
+            }, interval);
+
+            console.log(intervalId);
+
+            function sayHello(){
+                console.log("Hello there!");
+            }
+
+            // setInterval(sayHello,interval);
+
+            //10 seconds?
+            var delay = 5000;
+
+            var timeoutId = setTimeout(function(){
+                console.log("you have 5 seconds.");
+                alert("Refreshing the page!");
+                // window.location = 'https://java.codeup.com/javascript-i/bom-and-dom/bom/';
+                location.reload();
+            },delay);
+        })();
+
+        // alert("This is a test");
+        // var yourName = prompt("Enter your name");
+        // var answer = confirm("Are you in the Jupiter cohort?");
+        //
+        // console.log(yourName);
+        // console.log(answer);
+    </script>
+</body>
+</html>
