@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Events Lecture</title>
+    <style>
+        p {
+            font-size: .5em;
+        }
+        li {
+            background-color: papayawhip;
+        }
+    </style>
+</head>
+<body>
+<h1>DOM Events Lecture</h1>
+
+<button id="login">Login</button>
+
+<ul>
+    <li>Item one</li>
+    <hr>
+    <li>Item two</li>
+    <hr>
+    <li>Item three</li>
+    <hr>
+    <li>Item four</li>
+    <hr>
+    <li>Item five</li>
+    <hr>
+    <li>Item six</li>
+    <hr>
+    <li>Item seven</li>
+    <hr>
+    <li>Item eight</li>
+    <hr>
+    <li>Item nine</li>
+    <hr>
+    <li>Item ten</li>
+    <hr>
+</ul>
+
+
+<script>
+
+    "use strict";
+
+    var listBtns = document.getElementsByTagName("li");
+
+    // or e.target
+    function changeToRedColor(e) {
+        // this or e.target
+        this.style['background-color'] = 'red';
+    }
+
+    for (var i = 0; i < listBtns.length; i++) {
+        // listBtns[i].addEventListener("click", changeToRedColor);
+        listBtns[i].addEventListener("click", changeToRedColor);
+    }
+
+</script>
+
+</body>
+</html>
