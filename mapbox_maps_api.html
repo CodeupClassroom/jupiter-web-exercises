@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mapbox Maps Api</title>
+
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+	<div id='map' style='width: 100%; height: 700px;'></div>
+
+
+	<script src="js/keys.js"></script>
+	<script src="js/mapbox-geocoder-utils.js"></script>
+
+	<script>
+		mapboxgl.accessToken = mapboxToken;
+
+		var mapOptions = {
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			zoom: 10,
+			center: [-98.4916, 29.4252]
+		}
+
+		var map = new mapboxgl.Map(mapOptions);
+
+
+		//3. Generate a map that shows the city with your favorite restaurant using geocoding.
+
+		// geocode("San Antonio, TX", mapboxToken).then(function(result) {
+		// 	console.log(result);
+		// 	map.setCenter(result);
+		// 	map.setZoom(8);
+		// });
+
+		//4. Redraw the map of the above location at zoom levels 5, 15, and 20
+		// Change the zoom level on line 27
+
+
+		//5.Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
+
+		// geocode("5146 Broadway St, San Antonio, TX 78209", mapboxToken).then(function(result) {
+		// 	console.log(result);
+		// 	map.setCenter(result);
+		// 	map.setZoom(20);
+		//
+		// 	//6. Create a popup with the name of the restaurant.
+		// 	var popup = new mapboxgl.Popup()
+		// 		.setHTML("Sorrent Pizza & Restaurant");
+		//
+		// 	var marker = new mapboxgl.Marker()
+		// 		.setLngLat(result)
+		// 		.setPopup(popup)
+		// 		.addTo(map);
+		// });
+
+
+		//8. Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.
+
+		var restArray = [
+			{
+				address: "5146 Broadway St, San Antonio, TX 78209",
+				popupHTML: "<p>Sorrento Pizza & Restaurant\n</p>"
+			},
+			{
+				address: "3021 MacArthur View, San Antonio, TX 78217",
+				popupHTML: "<p>Last Slice Pizza\n</p>"
+			},
+			{
+				address: "2818 West Ave, San Antonio, TX 78201",
+				popupHTML: "<p>Tacos West Ave <br> 2818 West Ave, San Antonio, TX 78201</p>"
+			}
+		]
+
+		restArray.forEach(function (rest) {
+			console.log(rest);
+			geocode(rest.address, mapboxToken).then(function(coordinates) {
+				var popup = new mapboxgl.Popup()
+					.setHTML(rest.popupHTML);
+
+				var marker = new mapboxgl.Marker()
+					.setLngLat(coordinates)
+					.setPopup(popup)
+					.addTo(map);
+			});
+		});
+
+	</script>
+
+</body>
+</html>

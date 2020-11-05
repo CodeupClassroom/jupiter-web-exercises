@@ -82,11 +82,11 @@ var alamoMarker = new mapboxgl.Marker(markerOptions)
 
 // TODO TOGETHER: Comment out the popup we just added. Add a popup to the alamo marker.
 
-var alamoPopup = new mapboxgl.Popup()
-	.setHTML("<p>Remember the Alamo</p>")
-	.addTo(map);
-
-alamoMarker.setPopup(alamoPopup);
+// var alamoPopup = new mapboxgl.Popup()
+// 	.setHTML("<p>Remember the Alamo</p>")
+// 	.addTo(map);
+//
+// alamoMarker.setPopup(alamoPopup);
 
 
 
@@ -121,8 +121,14 @@ geocode("600 Navarro St #350, San Antonio, TX 78205 ", mapboxToken).then(funct
 	map.setCenter(result);
 	map.setZoom(15);
 
+	var popup = new mapboxgl.Popup()
+		.setHTML("<h6>Codeup Rocks</h6>")
+		.addTo(map);
+
+
 	new mapboxgl.Marker()
 		.setLngLat(result)
+		.setPopup(popup)
 		.addTo(map);
 
 })
