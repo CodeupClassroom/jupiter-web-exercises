@@ -6,6 +6,12 @@
 </head>
 <body>
 
+<!-- --------- add buttons-->
+<button id="chg-header-btn">Change Header</button>
+<button id="chg-subheader-btn">Change Subheader</button>
+<button id="chg-list-btn">Change List</button>
+<button id="chg-paragraph-btn">Change Paragraph</button>
+
 <h1 id="main-header">Hello World!</h1>
 <ul>
     <li data-dbid="1">Item 1</li>
@@ -28,38 +34,65 @@
 <script>
     (function() {
         "use strict";
-        // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById('main-header');
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        // --------- select buttons from DOM
 
-        // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById('sub-header');
+        var chgHeaderBtn = document.getElementById("chg-header-btn");
+        var chgSubHeaderBtn = document.getElementById("chg-subheader-btn");
+        var chgListBtn = document.getElementById("chg-list-btn");
+        var chgParagraphBtn = document.getElementById("chg-paragraph-btn");
 
-        // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        // --------- wrap code in listener functions
 
-        // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName('li');
+        function changeHeader() {
+            // TODO: Uncomment next line and get the main header element by id
+            var mainHeader = document.getElementById('main-header');
 
-        // TODO: Set text color on every other list item to grey
-        // TODO: Set text color of li with dbid = 1 to blue
-        for (var i = 0; i < listItems.length; i += 1) {
-            if (listItems[i].getAttribute('data-dbid') === '1') {
-                listItems[i].style.color = "blue";
-                continue;
-            }
-            if (i % 2 !== 0) {
-                listItems[i].style.color = "grey";
+            // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
+
+
+        function changeSubHeader() {
+            // TODO: Uncomment the next line and get the sub header element by id
+            var subHeader = document.getElementById('sub-header');
+
+            // TODO: Set the text color of subHeader to blue
+            subHeader.style.color = "blue";
+        }
+
+        function changeList() {
+            // TODO: Uncomment the next line and get all list items
+            var listItems = document.getElementsByTagName('li');
+
+            // TODO: Set text color on every other list item to grey
+            // TODO: Set text color of li with dbid = 1 to blue
+            for (var i = 0; i < listItems.length; i += 1) {
+                if (listItems[i].getAttribute('data-dbid') === '1') {
+                    listItems[i].style.color = "blue";
+                    continue;
+                }
+                if (i % 2 !== 0) {
+                    listItems[i].style.color = "grey";
+                }
             }
         }
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        function changeParagraph() {
+            // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+            var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!";
+            // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+            subParagraphs[0].innerText = "Mission Accomplished!";
+        }
+
+        // --------- add event listeners
+
+        chgHeaderBtn.addEventListener('click', changeHeader);
+        chgSubHeaderBtn.addEventListener('click', changeSubHeader);
+        chgListBtn.addEventListener('click', changeList);
+        chgParagraphBtn.addEventListener('click', changeParagraph);
+
     })();
 </script>
 </body>
