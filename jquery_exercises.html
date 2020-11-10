@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Selectors Exercise</title>
+</head>
+<body>
+
+<h1 id="header">jQuery Test Page</h1>
+<div id="testDiv">This is a div</div>
+<p class="para">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<p class="para">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<p class="para" id="codeup">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<ul id="unordered">
+    <li class="codeup">I love JS</li>
+    <li class="codeup">I love Python</li>
+    <li class="codeup">I love jQuery</li>
+</ul>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        "use strict";
+
+        // ================== ID SELECTORS
+
+        var divContents = $('#testDiv').html();
+        alert(divContents);
+
+        // ================== CLASS SELECTORS
+
+        $('.codeup').css("border", "1px solid red");
+
+        // ================== ELEMENT SELECTORS
+
+        $('li').css('font-size', '20px');
+        //
+        $('h1').css('background-color', 'red');
+        // $('p').css('background-color', 'yellow');
+        // $('li').css('background-color', 'yellow');
+        //
+        // // ================== MULTIPLE SELECTORS
+        $('h1, p, li').css('background-color', 'yellow');
+
+
+
+
+    });
+
+
+</script>
+</body>
+</html>
