@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mouse Events Lecture</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <main id="container" class="container mt-5">
+        <h1>Mouse Events Lecture</h1>
+        <h3 class="blue-text">Sub Header</h3>
+        <p class="blue-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p class="blue-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <hr>
+        <ul>
+            <li>Item 1</li>
+            <li id="special-item">Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <div class="box" id="box"></div>
+    </main>
+
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+
+        "use strict";
+
+    // Event Handler / Listener Function Review from JavaScript
+
+    // with anon function
+
+        // var mainContainer = document.getElementById('container');
+        //
+        // mainContainer.addEventListener("click", function(e) {
+        //     console.log(e);
+        // });
+
+    // with defined handler
+
+        // var mainContainer = document.getElementById('container');
+        //
+        // function logEventOb(e) {
+        //     console.log(e);
+        // }
+        //
+        // mainContainer.addEventListener("click", logEventOb);
+
+
+    // jQuery with anon function
+
+        // $('#container').click(function(e) {
+        //     console.log(e);
+        // });
+
+
+
+    // jQuery with defined handler
+
+        // function logEventOb(e) {
+        //     console.log(e);
+        // }
+        //
+        // $('#container').click(logEventOb);
+
+
+    // Double click and using "this" or "e.target"
+
+        // $('li').dblclick(function() {
+        //     console.log(this);
+        //     $(this).css("background", "yellow");
+        // });
+
+        // $('li').dblclick(function(e) {
+        //     // console.log(e.target);
+        //     $(e.target).css("background", "yellow");
+        // });
+
+    // Hover
+
+        //SINGLE FUNCTION
+
+            // $('.box').hover(function() {
+            //     $(this).css('border-radius', '100px');
+            // });
+
+        
+        //TWO FUNCTIONS
+
+            // $('.box').hover(function() {
+            //     $(this).css('background', 'grey');
+            // }, function() {
+            //     $(this).css('background', 'red');
+            // });
+
+
+        /* extra practice problems
+
+            - double clicking on the square makes it disappear
+            - clicking on a paragraph will change the text to 'Howdy!'
+            - hovering over the sub header makes the letters turn to uppercase while hovering over
+
+        */
+
+    }); 
+
+</script>
+</body>
+</html>
