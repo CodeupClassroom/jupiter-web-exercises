@@ -49,31 +49,21 @@
 
         "use strict";
 
-        // ================== ID SELECTORS
+        $('h1').click(function(e) {
+            $(e.target).css('background', 'red');
+        });
 
-        var divContents = $('#testDiv').html();
-        alert(divContents);
+        $('p').dblclick(function(e) {
+            $(e.target).css('font-size', '18px');
+        });
 
-        // ================== CLASS SELECTORS
-
-        $('.codeup').css("border", "1px solid red");
-
-        // ================== ELEMENT SELECTORS
-
-        $('li').css('font-size', '20px');
-        //
-        $('h1').css('background-color', 'red');
-        // $('p').css('background-color', 'yellow');
-        // $('li').css('background-color', 'yellow');
-        //
-        // // ================== MULTIPLE SELECTORS
-        $('h1, p, li').css('background-color', 'yellow');
-
-
-
+        $('li').hover(function(e) {
+            $(e.target).css('color', 'red');
+        }, function(e) {
+            $(e.target).css('color', 'black');
+        });
 
     });
-
 
 </script>
 </body>
