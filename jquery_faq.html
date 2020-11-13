@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Astronomy FAQs</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <style>
+        /*.invisible { visibility: hidden }*/
+        .invisible { display: none }
+        dt::first-letter {
+            font-size: large;
+            font-weight: bold;
+            color: red;
+        }
+        .highlighted { background-color: goldenrod }
+        .bold { font-weight: bolder }
+        .blue { color: coral }
+    </style>
+</head>
+<body class="container">
+<div id="newsletter" class="alert alert-dismissible"><h2>Would you like to sign up for our newsletter? <span data-dismiss="alert">x</span></h2>  </div>
+<!--<div id="register"><h2>Please register for the site.</h2></div>-->
+<div id="register" class="modal fade" tabindex="-1" role="dialog" data-show="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Please register for the site.</h4>
+            </div>
+            <!--            <div class="modal-body">-->
+            <!--                <p>One fine body&hellip;</p>-->
+            <!--            </div>-->
+            <!--            <div class="modal-footer">-->
+            <!--                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+            <!--                <button type="button" class="btn btn-primary">Save changes</button>-->
+            <!--            </div>-->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<h1>Astronomy FAQs</h1>
+<a href="#" id="toggle">Toggle Details</a>
+<dl>
+    <dt>Andromeda</dt>
+    <dd>The Andromeda Galaxy, also known as Messier 31, M31, or NGC 224 and originally the Andromeda Nebula, is a barred spiral galaxy approximately 2.5 million light-years from Earth and the nearest major galaxy to the Milky Way.</dd>
+    <dt>Betelgeuse</dt>
+    <dd>Betelgeuse is usually the tenth-brightest star in the night sky and, after Rigel, the second-brightest in the constellation of Orion. It is a distinctly reddish semiregular variable star whose apparent magnitude, varying between +0.0 and +1.6, has the widest range displayed by any first-magnitude star.</dd>
+    <dt>Ceres</dt>
+    <dd>Ceres is the largest object in the main asteroid belt that lies between the orbits of Mars and Jupiter. With a diameter of 940 km, Ceres is both the largest of the asteroids and the only dwarf planet inside Neptune's orbit. It is the 25th-largest body in the Solar System within the orbit of Neptune. </dd>
+    <dt>Deimos</dt>
+    <dd>Deimos is the smaller and outermost of the two natural satellites of Mars, the other being Phobos. Deimos has a mean radius of 6.2 km and takes 30.3 hours to orbit Mars. Deimos is 23,460 km from Mars, much further than Mars's other moon, Phobos.</dd>
+    <dt>Europa</dt>
+    <dd>Europa, or Jupiter II, is the smallest of the four Galilean moons orbiting Jupiter, and the sixth-closest to the planet of all the 79 known moons of Jupiter. It is also the sixth-largest moon in the Solar System.</dd>
+    <dt>Fortuna</dt>
+    <dd>Fortuna (minor planet designation: 19 Fortuna) is one of the largest main-belt asteroids. It has a composition similar to 1 Ceres: a darkly colored surface that is heavily space-weathered with the composition of primitive organic compounds, including tholins.</dd>
+    <dt>Ganymede</dt>
+    <dd>Ganymede, a satellite of Jupiter, is the largest and most massive of the Solar System's moons. The ninth-largest object in the Solar System, it is the largest without a substantial atmosphere. It has a diameter of 5,268 km, making it 26% larger than the planet Mercury by volume, although it is only 45% as massive.</dd>
+    <dt>Hyperion</dt>
+    <dd>Hyperion, also known as Saturn VII, is a moon of Saturn discovered by William Cranch Bond, George Phillips Bond and William Lassell in 1848. It is distinguished by its irregular shape, its chaotic rotation, and its unexplained sponge-like appearance. It was the first non-round moon to be discovered.</dd>
+    <dt>IO</dt>
+    <dd>Io, or Jupiter I, is the innermost and third-largest of the four Galilean moons of the planet Jupiter. It is the fourth-largest moon in the Solar System, has the highest density of all of them, and has the lowest amount of water of any known astronomical object in the Solar System.</dd>
+    <dt>Jupiter</dt>
+    <dd>Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. </dd>
+</dl>
+<h3>Europa</h3>
+<ul>
+
+    <li>Orbits Jupiter</li>
+    <li>Named after Europa (consort of Zeus), a Phoenician princess in Greek mythology, from whom the name of the continent Europe is taken</li>
+    <li>Also one of the Oceanids, the daughters of the Titan Oceanus</li>
+    <li>Slightly smaller than Earth's moon</li>
+</ul>
+<h3>Hyperion</h3>
+<ul>
+
+    <li>Orbits Saturn</li>
+    <li>The first non-round moon to be discovered</li>
+    <li>Also a great series of sci-fi novels by Dan Simmons </li>
+    <li>One of the twelve Titan children of Gaia (Earth) and Uranus (Sky) who, led by Cronus, overthrew their father Uranus and were themselves later overthrown by the Olympians.</li>
+</ul>
+<h3>Io</h3>
+<ul>
+
+    <li>Orbits Jupiter</li>
+    <li>Can stand for Input/Ouput</li>
+    <li>In mythology, a daughter of Inachus in Greek mythology, and lover of Zeus who was turned into a cow</li>
+    <li>Also a TLD</li>
+</ul>
+
+<button id="traversing">GO</button>
+
+
+<!-- jQuery and bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function (){
+        $('dd').addClass("invisible");
+        $("ul").hide();
+
+        $('#toggle').click(function(){
+            $('dd').toggleClass("invisible");
+        });
+
+        $('dt').click(function () {
+            $(this).addClass('highlighted');
+        });
+
+        $("#traversing").click(function(){
+            $('ul').each(function(){
+                // $(this).children(":last-child").addClass("highlighted");
+                $(this).children().last("li").addClass("highlighted")
+            })
+        });
+
+        $("h3").click(function(){
+            $(this).parent().children("li").addClass("bold");
+            $(this).next("ul").slideToggle(500);
+        });
+
+        $("li").click(function(){
+            $(this).parent().children("li").first().addClass("blue");
+            // $("li:nth-child(1)").addClass("blue");
+        });
+
+        // $("span").click(function (){
+        //     $(this).parent().parent().hide(250);
+        // });
+
+
+        setTimeout(function(){
+            $("#register").modal("show");
+        }, 5000);
+
+
+
+
+    })
+</script>
+</body>
+</html>
