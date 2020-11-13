@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Animate Lecture</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+
+        div {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
+        h3 {
+            cursor: pointer;
+            display: inline-block;
+        }
+        h3:hover {
+            color: green;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<main class="container">
+
+    <h1>Animate Lecture</h1>
+    <button class="btn btn-default" id="bigger">Animate Div</button>
+    <button class="btn btn-default" id="animate">Chain Animations!</button>
+    <br><br>
+    <div></div>
+    <h3>Google</h3>
+
+</main>
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        "use strict";
+
+        var time = 2000;
+
+        // Animating a single style change
+
+           // $("button").click(function() {
+           //     $('div').animate({
+           //         "width": "30px"
+           //     }, time);
+           // });
+
+
+        // Animating multiple changes
+
+           // $("#bigger").click(function() {
+           //     $('div').animate({
+           //         "width": "30px",
+           //         "height": "30px"
+           //     }, 5000);
+           // });
+
+
+        // Relative values changes - try clicking multiple times!
+
+           // function getBigger() {
+           //     $("div").animate({
+           //         "width": "+=100px",
+           //         "height": "+=100px",
+           //         "left": "+=50px"
+           //     }, 500);
+           // }
+           //
+           // $("#bigger").click(getBigger);
+
+
+        // Completion Callback - a function that fires when animation is completed
+
+           // $('h3').click(function() {
+           //     $('h3').animate({
+           //         "font-size": "200px",
+           //         "opacity": "0"
+           //     }, 1500, function() {
+           //         window.location = "https://google.com"
+           //     });
+           // });
+
+
+        // Chaining animations
+
+           // $("#animate").click(function() {
+           //     $("div").animate({
+           //         "left": "400px",
+           //         "width": "400px",
+           //         "height": "400px",
+           //         "border-radius": "250px"
+           //     }, time).animate({
+           //         "left": "0",
+           //         "width": "200px",
+           //         "height": "200px",
+           //         "border-radius": "0"
+           //     }, time);
+           // });
+
+    });
+
+</script>
+
+</body>
+</html>

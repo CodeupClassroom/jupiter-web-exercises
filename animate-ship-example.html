@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>jQuery Attributes and CSS Lecture</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+
+        img {
+            position: relative;
+            top: 150px;
+        }
+        .boom {
+            background-image: url("img/boom.jpg");
+            background-size: cover;
+            backround-repeat: no-repeat;
+            background-color: white !important;
+        }
+        .shipBackground {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(165, 42, 42);
+        }
+        .show {
+            display: block;
+            color: white;
+        }
+        #fire {
+            opacity: 0;
+            display: none
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<button class="show hidden" id="reboot">REBOOT</button>
+<main class="container">
+
+    <h1 class="text-center">jQuery Attributes and CSS Lecture</h1>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <br>
+            <h2>Space Ship Controls</h2>
+            <br>
+            <div class="navigation">
+                <h4>Navigation Controls</h4>
+                <p>Ship preparing to...<span id="navOrder"></span></p>
+                <div id="controlPanel">
+                    <button id="takeoff">takeoff</button>
+                    <button id="turn">turn</button>
+                    <button id="land">land</button>
+                </div>
+            </div>
+            <br>
+            <div class="missiles">
+                <h4>Weapons</h4>
+                <p>Ship preparing to...<span id="weaponOrder"></span></p>
+                <div id="missilePanel">
+                    <button id="arm">arm/disarm missiles</button>
+                    <button id="fire">FIRE</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 ">
+            <div class="shipBackground">
+                <img class="center-block" src="./img/ship.png">
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous">
+</script>
+
+<script>
+
+    // Animate Lecture
+
+    $(document).ready(function() {
+
+        "use strict";
+
+        // Number of degrees to transform
+        var degrees = 0;
+
+        var arm = {
+            "background-color": "black",
+            "color": "red"
+        };
+
+        // Make the background color change to cyan when takeoff is clicked
+        $("#takeoff").click(function() {
+            // need jQuery UI library
+            $(".shipBackground").animate({
+                "background-color": "#00FFFF"
+            }, 2000).animate({
+                "background-color": "#000"
+            }, 3000);
+
+            $("img").animate({
+                "width": "10%",
+                "bottom": "200px"
+            }, 5000);
+        });
+
+
+        // Rotate ship image 90 degrees if in the sky, otherwise alert warning
+        $("#turn").click(function() {
+            if ($(".shipBackground").css("background-color") == "rgb(165, 42, 42)") {
+                alert("Cannot turn while on the ground!");
+            } else {
+                degrees += 90;
+                var iterator = degrees - 90;
+                var intervalId = setInterval(function() {
+                    $("img").css("-webkit-transform", "rotate(" + iterator + "deg)");
+                    ++iterator;
+                    if (iterator >= degrees) {
+                        clearInterval(intervalId);
+                    }
+                }, 3);
+            }
+        });
+
+        // Rotate the ship upright regardless of position and revert color to ground
+        $("#land").click(function() {
+
+            $(".shipBackground").animate({
+                "background-color": "#00FFFF"
+            }, 2000).animate({
+                "background-color": "rgb(165, 42, 42)"
+            }, 2000);
+
+            var iterator = degrees;
+            var intervalId = setInterval(function() {
+                $("img").css("-webkit-transform", "rotate(" + iterator + "deg)");
+                ++iterator;
+                if ((iterator % 360) === 0) {
+                    clearInterval(intervalId);
+                }
+            }, 10);
+
+            $("img").animate({
+                "width": "40%",
+                "bottom": "0"
+            }, 5000, function() {
+                alert("The Eagle has landed!");
+            });
+
+        });
+
+        // Make the fire button appear and animate the background to the styling of the arm class
+        $("#arm").click(function() {
+            $("body").animate(arm, 2000);
+            $(".shipBackground").animate({
+                "background-color": "black"
+            }, 2000);
+            $("#fire").css("display", "inline").animate({
+                "opacity": "1"
+            }, 2000);
+
+        });
+
+        // Add fire class to body
+        $("#fire").click(function() {
+            $("body").addClass("boom")
+            $("body").html("");
+        });
+
+   });
+
+</script>
+
+</body>
+
+</html>
