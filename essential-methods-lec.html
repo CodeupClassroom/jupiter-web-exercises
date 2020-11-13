@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Essential Methods</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/essential-methods-lec.css">
+</head>
+<body>
+    <div class="container">
+        <!--The Header contains the Banner-->
+        <header class="text-center">
+            <h1 id="main-heading">Sorting Hat</h1>
+            <div class="banner">
+                <img src="img/sortinghat.png" alt="sorting_hat">
+            </div>
+        </header>
+        <!--The Main section containing our Houses-->
+        <main>
+            <!--      This is the section where we input a name to be sorted      -->
+            <section class="text-center">
+                <input id="new-wizard" type="text" placeholder="Enter a name">
+                <button id="sort-wizard" type="submit">Sort!</button>
+            </section>
+            <!--      A way to filter through our results     -->
+            <section class="text-center">
+                <button id="highlight-witches">Witches</button>
+                <button id="highlight-wizards">Wizards</button>
+                <button id="highlight-houses">Houses</button>
+            </section>
+            <div class="row text-center">
+                <!--Gryffindor-->
+                <div class="col one-quarter">
+                    <h3 id="gryffindor-house" class="house-name">Gryffindor</h3>
+                    <ul id="gryffindor">
+                        <li class="wizards">Terrell</li>
+                        <li class="wizards">Daniel</li>
+                        <li class="wizards">Sophie</li>
+                    </ul>
+                    <button id="lock-g" class="lock-in" type="submit">Lock In</button>
+                </div>
+                <!--Slytherin-->
+                <div class="col one-quarter">
+                    <h3 id="slytherin-house" class="house-name">Slytherin</h3>
+                    <ul id="slytherin">
+                        <li class="witches">Nadia</li>
+                        <li class="wizards">Carson</li>
+                    </ul>
+                    <button id="lock-s" class="lock-in" type="submit">Lock In</button>
+                </div>
+                <!--Ravenclaw-->
+                <div class="col one-quarter">
+                    <h3 id="ravenclaw-house" class="house-name">Ravenclaw</h3>
+                    <ul id="ravenclaw">
+                        <li class="wizards">Fer</li>
+                        <li class="witches">Elle</li>
+                        <li class="wizards">Justin</li>
+                    </ul>
+                    <button id="lock-r" class="lock-in" type="submit">Lock In</button>
+                </div>
+                <!--Hufflepuff-->
+                <div class="col one-quarter">
+                    <h3 id="hufflepuff-house" class="house-name">Hufflepuff</h3>
+                    <ul id="hufflepuff">
+                        <li class="witches">Vivian</li>
+                        <li class="wizards">David</li>
+                    </ul>
+                    <button id="lock-h" class="lock-in" type="submit">Lock In</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+    <script src="js/essential-methods-lec.js"></script>
+</body>
+</html>
