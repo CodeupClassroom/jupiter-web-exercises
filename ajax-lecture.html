@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AJAX Lecture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+<main class="container mt-5">
+    <h1 class="my-5">Intro to AJAX</h1>
+    <form method="GET" action="https://hookb.in/Xk6xMEjQNYSbobmZEyxD">
+        <div class="input-group">
+            <input placeholder="Enter username" class="form-control" type="text" name="username">
+        </div>
+        <button class="btn btn-success my-2">Submit</button>
+    </form>
+    <a href="https://hookb.in/Xk6xMEjQNYSbobmZEyxD?username=test">Some Link</a>
+</main>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        "use strict";
+
+        // simple request
+
+            // $.ajax('./data/orders.json'); // jQuery request object
+            //
+            // $.ajax("./data/orders.json").done(function(responseData){
+            //     console.log(responseData);
+            // });
+
+            // DOESN'T WORK
+            //     var responseData;
+            //     $.ajax('./data/orders.json').done(function(data) {
+            //         responseData = data;
+            //     }); // .done()
+            //
+            //     console.log(responseData);
+
+        // simple API request
+
+            // $.ajax("https://swapi.dev/api/films").done(function(data){
+            //     console.log(data);
+            // });
+
+
+        // single argument with .done(), .fail() and .always() methods
+
+            // $.ajax({
+            //     "url": "https://swapi.dev/api/films",
+            //     "type": "GET",
+            //     "data": {
+            //         "search": "A New Hope"
+            //     }
+            // }).done(function(data, status, jqXhr) {
+            //     // console.log(status);
+            //     console.log(data);
+            //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+            // }).fail(function(jqXhr, status, error) {
+            //     console.log("Request failed! " + status);
+            // }).always(function() {
+            //     console.log("Request made.");
+            // });
+
+
+        // Url first argument and configuration object second argument
+
+            // $.ajax("https://swapi.dev/api/films", {
+            //     "type": "GET",
+            //     "data": {
+            //         "search": "A New Hope"
+            //     }
+            // }).done(function(data) {
+            //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+            // });
+
+
+        // Storing returned jQuery XML HTTP Response object
+
+            // var jqXhr = $.ajax("https://swapi.dev/api/films", {
+            //     "type": "GET",
+            //     "data": {
+            //         "search": "A New Hope"
+            //     }
+            // });
+            //
+            // console.log(jqXhr);
+            //
+            // jqXhr.done(function(data) {
+            //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+            // });
+
+
+        // GET short-hand method
+
+            // $.get("https://swapi.dev/api/films", {
+            //     "search": "A New Hope"
+            // }).done(function(data) {
+            //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+            // });
+
+    });
+
+</script>
+
+</body>
+</html>
