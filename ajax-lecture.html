@@ -36,11 +36,43 @@
 
         // simple request
 
+            // make an AJAX request to the Star Wars API
+            // console.log($.ajax('https://swapi.dev/api/people/1'));
+
+
+            // var jqXhr = $.ajax('https://swapi.dev/api/people/1');
+
+
+            // example of what .done() method kinda looks like
+            // function done(callbackFunction) {
+            //     // wait for the request
+            //     var data = // fufilled data from the request
+            //     callbackFunction(data);
+            // }
+
+            // $.ajax('https://swapi.dev/api/people/?search=darth').done(function(data) {
+            //     console.log(data);
+            // });
+
+        // $.ajax('https://swapi.dev/api/people/1').done(function(data) {
+        //     console.log(data);
+        //     console.log(data['eye_color']); // eye color
+        //     console.log(data.vehicles[0]);
+        // });
+
+
+        // $.ajax('data/orders.json').done(function(data) {
+        //     console.log(data[2].itemOrdered);
+        // });
+
+
+
             // $.ajax('./data/orders.json'); // jQuery request object
             //
             // $.ajax("./data/orders.json").done(function(responseData){
             //     console.log(responseData);
             // });
+
 
             // DOESN'T WORK
             //     var responseData;
@@ -78,12 +110,14 @@
 
         // Url first argument and configuration object second argument
 
-            // $.ajax("https://swapi.dev/api/films", {
+            // var url = "https://swapi.dev/api/films";
+            // var configObj = {
             //     "type": "GET",
             //     "data": {
             //         "search": "A New Hope"
             //     }
-            // }).done(function(data) {
+            // };
+            // $.ajax(url, configObj).done(function(data) {
             //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
             // });
 
@@ -96,13 +130,16 @@
             //         "search": "A New Hope"
             //     }
             // });
-            //
+
             // console.log(jqXhr);
             //
             // jqXhr.done(function(data) {
             //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
             // });
-
+            //
+            // jqXhr.fail(function(jqXhr, status, error) {
+            //     console.log(status);
+            // });
 
         // GET short-hand method
 
