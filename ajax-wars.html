@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star Wars Ajax</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <style type="text/css">
+    
+        body {
+            color: yellow;
+            background-color: black;
+        }
+        h1 {
+            font-size: 4em;
+            background: black;
+            margin-top: 0;
+            padding: 1em;
+        }
+        h3 {
+            font-size: 2.5em;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        h5 {
+            font-size: 1.5em;
+            font-weight: 200;
+        }
+        .invalid {
+            color: red;
+            text-align: left;
+        }
+        .info {
+            font-weight: 600;
+        }
+        #results {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: flex-start;
+            margin-bottom: 2em;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header class="container">
+        <h1 class="text-center">Star Wars Ajax Wiki</h1>
+    </header>
+
+    <main class="container">
+        <div class="" id="results">
+            <!-- AJAX Requests Go Here -->
+        </div>
+        <div class="searchField text-center fixed" id="searchField">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search Star Wars Characters">
+            <button class="goBtn btn btn-success btn-block" id="goBtn">GO!</button>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+         $(document).ready(function() {
+            var base_url = "https://swapi.dev/api/";
+            var infoDisplay = $("#results");
+            var output = ""; // output string
+            var displayOutput = "";
+            var input = $("#searchInput");
+
+            // Converts query input to search-ready string
+            function parseQuery(query) {
+
+                // convert string to array
+                var queryArray = query.split(" ");
+
+                // convert each word to lower case
+                for (var i = 0; i < queryArray.length; i++) {
+                    queryArray[i] = queryArray[i].toLowerCase();
+                }
+
+                // return result
+                return queryArray.join("+");
+            }
+
+            // function to append Star Wars API information to the document
+            function displayInfo(result, query) {
+                if (result === undefined || query === "") {
+                    infoDisplay.html("<h3 class='invalid'>No Results</h3>");
+                } else {
+                    infoDisplay.html("");
+                    output = "";
+                    displayOutput = "";
+                    output += "<h3>" + result.name + "</h3>";
+                    output += "<h5>" + "<span class='info'>DOB:</span> " + result.birth_year + "</h5>";
+                    output += "<h5>" + "<span class='info'>Gender:</span> " + result.gender + "</h5>";
+                    output += "<h5>" + "<span class='info'>Height:</span> " + result.height + " cm" + "</h5>";
+                    output += "<h5>" + "<span class='info'>Mass:</span> " + result.mass + " kg" + "</h5>";
+                    output += "<h5>" + "<span class='info'>Hair Color:</span> " + result.hair_color + "</h5>";
+                    output += "<h5>" + "<span class='info'>Skin Tone:</span> " + result.skin_color + "</h5>";
+                    infoDisplay.html(output);
+                }
+            }
+
+            // function to make AJAX GET request to Star Wars API based on input field value
+            function makeRequest(searchType, query) {
+
+                $.get(base_url + searchType, {
+                    "search": query
+                }).done(function(data) {
+                    console.log(data);
+                    var result = data.results[0];
+                    console.log(result);
+                    displayInfo(result, query);
+                }).fail(function(data, status) {
+                    alert(status);
+                });
+
+            };
+
+            // event on go button to make a new request
+            $("#goBtn").click(function() {
+                makeRequest("people", input.val());
+            });
+
+            // event listener on enter key to make the request
+            $(document).keydown(function(event) {
+                if (event.keyCode == 13) {
+                    makeRequest("people", input.val());
+                }
+            })
+
+
+         });
+    </script>
+
+</body>
+</html>

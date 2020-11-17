@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts">
+        <tr>
+            <td>Hammer</td>
+            <td>25</td>
+            <td>tool</td>
+            <td>20</td>
+        </tr>
+    </tbody>
+</table>
+
+<button id="refresh-btn">Refresh</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+    function refreshFromJson() {
+        $.get('data/inventory.json').done(function(tools) {
+            $('#insertProducts').html('');
+            for (var i = 0; i < tools.length; i += 1) {
+                $('#insertProducts').append(buildToolHTML(tools[i]));
+            }
+        });
+    }
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    function buildToolHTML(tool) {
+        var html = '';
+        html += '<tr>\n' +
+            '            <td>' + tool.title + '</td>\n' +
+            '            <td>' + tool.quantity + '</td>\n' +
+            '            <td>' + tool.categories.join(', ') + '</td>\n' +
+            '            <td>' + tool.price + '</td>\n' +
+            '        </tr>';
+        return html;
+    }
+
+    $('#refresh-btn').click(refreshFromJson);
+
+    refreshFromJson();
+});
+
+</script>
+
+</body>
+</html>
