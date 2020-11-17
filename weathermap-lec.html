@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<!-- Custom CSS -->
+
+	<title></title>
+</head>
+<body>
+
+<h1>Weather Map Project</h1>
+
+
+<h5>Tips</h5>
+<ul>
+	<li>Take time to plan out your approach for each part of the project</li>
+	<li>Commit along the way. Especially as you are starting new functionality</li>
+	<li>You may utilize the geocoder helper methods from the previous mapbox lesson</li>
+	<li>API Keys should be protected in your keys.js</li>
+	<li>Read the docs!</li>
+	<li>Get your project working, then focus on styling & refactoring</li>
+	<li>To add mapbox autocomplete search, you will need to include geocoder scripts from mapbox</li>
+</ul>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+
+<script>
+	$(document).ready(function () {
+
+		"use strict";
+
+
+		// GET REQUEST to OpenWeatherMap using city parameter
+		// https://openweathermap.org/current
+		// q <-- parameters from weather map docs
+		// APPID <-- weather api key in keys.js file
+		// $.get("http://api.openweathermap.org/data/2.5/weather", {
+		// 	APPID: OPEN_WEATHER_APPID,
+		// 	q: "San Antonio, US"
+		// }).done(function (data) {
+		// 	console.log(data);
+		// });
+
+
+
+
+		// TODO: How can we get imperial units instead?
+
+		// TODO: What are some additional ways we can get the weather from this API?
+
+
+
+
+
+
+		// GET REQUEST to OpenWeatherMap using lat and lng parameter
+		// $.get("http://api.openweathermap.org/data/2.5/weather", {
+		// 	APPID: OPEN_WEATHER_APPID,
+		// 	lat: 29.423017,
+		// 	lon: -98.48527,
+		// 	units: "imperial"
+		// }).done(function (data) {
+		// 	console.log(data);
+		// });
+
+
+
+
+
+
+
+
+
+
+		//TODO: How can we incorporate mapbox with this? How can we make it dynamic?
+
+
+		// TODO: Explore the docs... what endpoint can we use to get a forecast?
+
+		// TODO: What parameter can we include in order to get the daily forecast only
+
+
+
+
+		$.get("https://api.openweathermap.org/data/2.5/onecall", {
+			APPID: OPEN_WEATHER_APPID,
+			lat: 29.423017,
+			lon: -98.48527,
+			units: "imperial",
+			exclude: "current,minutely,hourly,alerts"
+		}).done(function (data) {
+			console.log(data);
+		});
+
+
+	});
+
+
+</script>
+</body>
+</html>
