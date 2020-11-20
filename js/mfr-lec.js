@@ -17,8 +17,25 @@ const numbers = [1,2,3,4,5,6,7,8,9,10];
 
 // TODO TOGETHER: Let's map through the array of numbers and add 1 to each element. Console log the new copy of the array.
 
+// let newArray = numbers.map(function(num){
+//     return num + 1;
+// });
+
+let newArray = numbers.map(num => num + 1);
+
+console.log(newArray);
+console.log(numbers);
 
 //TODO: Map through the new array of numbers and this time multiply each element by 3. Console log the new copy.
+
+// let productArray = newArray.map(function(num){
+//     return num * 3;
+// });
+
+let productArray = newArray.map(num => num * 3);
+
+console.log(productArray);
+
 
 //Bonus: Refactor your functions using ES6
 
@@ -30,7 +47,22 @@ const binary = [1,1,1,1,0,0,1,1,1,1];
 
 // TODO TOGETHER: Let's filter through our binary and return all the true values. We'll store the new array in a variable named 'ones'
 
+const ones = binary.filter(function(x){
+    // return x;
+    // return x === 1;
+    return x == true;
+});
+console.log(ones);
+
 // TODO: filter through binary again and this time, return all the false values.
+
+const zeroes = binary.filter(function(x){
+    // return !x;
+    // return x === 0;
+    return x == false;
+});
+
+console.log(zeroes);
 
 //Bonus: Refactor your functions using ES6
 
@@ -64,9 +96,21 @@ const fruitsAndVeggies = [
 
 // TODO: filter through the array of objects and return all fruit type objects.
 
+// const fruits = fruitsAndVeggies.filter(function(produce){
+//     return produce.type === "fruit";
+// });
+
+const fruits = fruitsAndVeggies.filter(produce => produce.type === "fruit").map(fruit => fruit.name.toUpperCase());
+
+console.log(fruits);
 
 // TODO: filter through the array of objects and return all vegetable type objects.
 
+const vegetables = fruitsAndVeggies.filter(function(produce){
+    return produce.type === "vegetable";
+});
+
+console.log(vegetables);
 
 /*********************************************
  *              .reduce
@@ -74,6 +118,16 @@ const fruitsAndVeggies = [
 
 const numbersArray = [1, 2, 3, 4, 5];
 
+let sumAtThree;
+const sum = numbersArray.reduce(function(currentSum, currentNumber){
+    // if(currentNumber === 3){
+    //     sumAtThree = currentSum;
+    // }
+    console.log(currentSum);
+    return currentSum + currentNumber;
+}, 0);
+
+console.log(sum);
 
 //accumulation = 0
 // add 1
