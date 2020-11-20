@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ES6 FOLLOW UP</title>
+</head>
+<body>
+
+<h1>Follow Up Questions</h1>
+
+
+<script>
+	"use strict";
+
+
+	/*******************************************
+	 *             For Of Loops
+	 *          Getting the index
+	 ******************************************/
+
+		// https://flaviocopes.com/how-to-get-index-in-for-of-loop/
+		// https://stackoverflow.com/questions/34348937/access-to-es6-array-element-index-inside-for-of-loop
+	const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+
+	for(let [i, day] of days.entries()){
+		console.log(i);
+		console.log(day);
+	}
+
+
+
+	/*******************************************
+	 *       Destructuring Nested Objects
+	 ******************************************/
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Nested_object_and_array_destructuring
+		// https://medium.com/@pyrolistical/destructuring-nested-objects-9dabdd01a3b8
+
+	const user = {
+			id: 339,
+			name: 'Fred',
+			age: 42
+		};
+	const {name} = user;
+	console.log(name); //prints: Fred
+
+
+
+	const userB = {
+		id: 339,
+		name: 'Fred',
+		age: 42
+	};
+	const {name: callSign} = userB;
+	console.log(callSign); //prints: Fred
+
+
+
+	const userC = {
+		id: 339,
+		name: 'Fred',
+		age: 42,
+		education: {
+			degree: 'Masters'
+		}
+	};
+	const {education: {degree}} = userC;
+	console.log(degree); //prints: Masters
+
+</script>
+
+</body>
+</html>
