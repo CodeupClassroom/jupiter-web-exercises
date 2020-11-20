@@ -116,19 +116,6 @@ console.log(vegetables);
  *              .reduce
  ******************************************** */
 
-const numbersArray = [1, 2, 3, 4, 5];
-
-let sumAtThree;
-const sum = numbersArray.reduce(function(currentSum, currentNumber){
-    // if(currentNumber === 3){
-    //     sumAtThree = currentSum;
-    // }
-    console.log(currentSum);
-    return currentSum + currentNumber;
-}, 0);
-
-console.log(sum);
-
 //accumulation = 0
 // add 1
 //accumulation = 1
@@ -145,7 +132,23 @@ console.log(sum);
 
 // TODO TOGETHER: Let's reduce our original numbers Array into one single value.
 
+const numbersArray = [1, 2, 3, 4, 5];
+
+let sumAtThree;
+
+const sum = numbersArray.reduce(function(currentSum, currentNumber){
+    // if(currentNumber === 3){
+    //     sumAtThree = currentSum;
+    // }
+    console.log(currentSum);
+    return currentSum + currentNumber;
+});
+
+console.log(sum);
+
 // TODO: Using .reduce, subtract all numbers in the numbers Array from a starting point of 100.
+
+const diff = numbersArray.reduce((currentDifference, currentNumber) => (currentDifference - currentNumber) ,100);
 
 const shoppingCarts = [
     {
@@ -173,17 +176,41 @@ const shoppingCarts = [
 
 // TODO: Using .reduce, return the total number of apples.
 
+const totalApples = shoppingCarts.reduce(function (total,cart){
+    return total + cart.apples;
+},0);
+
+console.log(totalApples);
 
 const colors = ['red','orange','red','blue','blue','green','red'];
 
 // TODO: Count the number of times a color appears in this Array. Hint: your initial value should be an empty object.
 
+const colorCount = colors.reduce(function (colorCount,color){
+    //colorCount.red vs colorCount[red]
+    if(typeof colorCount[color] === "undefined"){
+        colorCount[color] = 1;
+    } else {
+        colorCount[color] += 1;
+    }
+    console.log(colorCount);
+    return colorCount;
+},{});
+
+// The default data type of our initial value is going to be whatever data type is of the elements we iterate over, unless specified otherwise
+
+console.log(colorCount);
 
 const lyrics = ['we','all','live','in','a','yellow','submarine'];
 
 //TODO TOGETHER: Using reduce, let's turn this into a string.
 
+const oneLine = lyrics.reduce((currentString,word) => `${currentString} ${word}`);
+
+console.log(oneLine);
+
 // Bonus: Create an Array of all the unique fur colors! Hint: check out the ES6 'Set' data type.
+// to transform a set into an Array: Array.from(insertyourSethere)
 
 var hamsters = [
     {
