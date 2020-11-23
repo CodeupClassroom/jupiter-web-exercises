@@ -61,30 +61,30 @@
 
         // A Simpler Song to Read (I promise)... but still sung terribly...
 
-        // function singLyrics(lyrics, pitch) {
-        //     return new Promise((res) => {
-        //         var lyric = new SpeechSynthesisUtterance(lyrics);
-        //         lyric.pitch = pitch;
-        //         lyric.rate = .7;
-        //         speechSynthesis.speak(lyric);
-        //         song.append(lyrics);
-        //         setTimeout(res, 1500);
-        //     });
-        // }
-        //
-        // const singPromises = () => {
-        //     song.innerHTML = '';
-        //     return singLyrics('All a-', .5)
-        //         .then(() => singLyrics('round the', 1))
-        //         .then(() => singLyrics(' mulberry', 1.5))
-        //         .then(() => singLyrics(' bush', 1))
-        //         .then(() => singLyrics(' the monkey', .5))
-        //         .then(() => singLyrics(' chased', 1))
-        //         .then(() => singLyrics(' the wea-', 1.5))
-        //         .then(() => singLyrics(' sel', 1));
-        // };
+        function singLyrics(lyrics, pitch) {
+            return new Promise((res) => {
+                var lyric = new SpeechSynthesisUtterance(lyrics);
+                lyric.pitch = pitch;
+                lyric.rate = .7;
+                speechSynthesis.speak(lyric);
+                song.append(lyrics);
+                setTimeout(res, 1500);
+            });
+        }
 
-        // document.getElementById('sing-btn').addEventListener('click', singPromises);
+        const singPromises = () => {
+            song.innerHTML = '';
+            return singLyrics('All a-', .5)
+                .then(() => singLyrics('round the', 1))
+                .then(() => singLyrics(' mulberry', 1.5))
+                .then(() => singLyrics(' bush', 1))
+                .then(() => singLyrics(' the monkey', .5))
+                .then(() => singLyrics(' chased', 1))
+                .then(() => singLyrics(' the wea-', 1.5))
+                .then(() => singLyrics(' sel', 1));
+        };
+
+        document.getElementById('sing-btn').addEventListener('click', singPromises);
 
     </script>
 

@@ -12,7 +12,7 @@
         <div id="articles"></div>
 
     </main>
-<script src="keys.js"></script>
+<script src="js/keys.js"></script>
 <script
         src="https://code.jquery.com/jquery-3.4.0.min.js"
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
@@ -40,32 +40,35 @@
 
 
 // ============ Basic Example of Promise Creation and Handling
+//
+// let goodKid = false;
+//
+// // a promise is made to do something
+// const getCake = new Promise((resolve, reject) => {
+//     if (goodKid) {
+//         resolve("Here is some cake");
+//     } else {
+//         reject("Bad. No cake. :(");
+//     }
+// });
+//
+// console.log(getCake); // promise object
+//
+// // once the promise is resolved or rejected, take additional action
+//
+// getCake.then(data => {
+//     console.log(data);
+// }).catch(error => {
+//     console.log(error);
+// });
 
-let goodKid = true;
 
-// a promise is made to do something
-const getCake = new Promise((resolve, reject) => {
-    if (goodKid) {
-        resolve("Here is some cake");
-    } else {
-        reject("Bad. No cake. :(");
-    }
-});
 
-console.log(getCake); // promise object
-
-// once the promise is resolved or rejected, take additional action
-
-getCake.then((data) => {
-    console.log(data);
-}).catch((err) => {
-    console.log(err);
-});
 
 // ============ Using Promises with jQuery version 3+
 
     // jQuery AJAX methods
-    //     $.ajax('https://swapi.co/api/people/1')
+    //     $.ajax('https://swapi.dev/api/people/1')
     //         .done(function(data) {
     //             console.log(data);
     //         })
@@ -74,7 +77,7 @@ getCake.then((data) => {
     //         });
 
     // Using promise methods (jQuery version 3.x.x and after)
-    //     $.ajax('https://swapi.co/api/people/1')
+    //     $.ajax('https://swapi.dev/api/people/1')
     //         .then(function(data) {
     //             console.log(data);
     //         })
@@ -92,7 +95,7 @@ getCake.then((data) => {
 // ============ Fetch API
 
 // jQuery AJAX request example
-// $.ajax('https://swapi.co/api/people/1')
+// $.ajax('https://swapi.dev/api/people/1')
 //     .done(function(data) {
 //         console.log(data);
 //     })
@@ -101,7 +104,7 @@ getCake.then((data) => {
 //     });
 
 // Fetch API GET example
-//     fetch('https://swapi.co/api/people/1')
+//     fetch('https://swapi.dev/api/people/1')
 //         .then((response) => {
 //             return response.json();
 //         })
@@ -124,8 +127,6 @@ getCake.then((data) => {
     // })
     //     .then(console.log)
     //     .catch(console.log);
-
-
 
 
 
@@ -171,19 +172,16 @@ getCake.then((data) => {
     //
     // function buildWeatherHtml(articles) {
     //     return articles.reduce((accum, curr) => {
-    //         return accum += `
+    //         return accum + `
     //             <article>
     //                 <a href="${curr.web_url}">${curr.headline.main}</a>
     //             </article>
-    //         `
+    //         `;
     //     }, "");
     // }
     //
     // getLocalForecast()
-    //     .then(forecast => {
-    //         console.log(forecast.currently.summary);
-    //         return forecast.currently.summary
-    //     })
+    //     .then(forecast => forecast.currently.summary)
     //     .then(getNYTimesArticle)
     //     .then(data => {
     //         document.getElementById("articles").innerHTML = buildWeatherHtml(data.response.docs);
