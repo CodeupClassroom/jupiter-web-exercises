@@ -97,25 +97,32 @@
 // jQuery AJAX request example
 // $.ajax('https://swapi.dev/api/people/1')
 //     .done(function(data) {
-//         console.log(data);
+//         console.log(data.name);
 //     })
 //     .fail(function(jqXHR, message) {
 //         console.log(message);
 //     });
 
-// Fetch API GET example
-//     fetch('https://swapi.dev/api/people/1')
-//         .then((response) => {
-//             return response.json();
-//         })
-//         .then((data) => {
-//             console.log(data);
-//         })
-//         .catch(console.log);
+
+// fetch('https://swapi.dev/api/people/1').then(response => {
+//     return response.json();
+// }).then(data => {
+//     console.log(data.name);
+// }).catch(err => {
+//     console.log(err);
+// });
+
+
+// fetch('https://swapi.dev/api/people/1')
+//     .then(response => response.json())
+//     .then(console.log)
+//     .catch(console.log);
+
+
 
 // Fetch API POST example
 
-    // fetch('https://hookb.in/eKZ0mV6k1aTr9g86Q7JM', {
+    // fetch('https://hookb.in/K3RyG3md1lH0zzW3VPMq', {
     //     method: 'POST',
     //     headers: {
     //         'Content-Type': 'application/json'
@@ -125,6 +132,7 @@
     //         password: "pass123"
     //     })
     // })
+    //     .then(res => res.json())
     //     .then(console.log)
     //     .catch(console.log);
 
@@ -135,7 +143,22 @@
 
 
 
+// ============ Promise Chaining
 
+// function countSlow(count) {
+//     return new Promise(function(res) {
+//         setTimeout(function() {
+//             console.log(count);
+//             res(++count);
+//         }, 500);
+//     });
+// }
+//
+// countSlow(1)
+//     .then(countSlow)
+//     .then(countSlow)
+//     .then(countSlow)
+//     .then(countSlow);
 
 
 
@@ -191,24 +214,6 @@
 
 // ====================================== ADDITIONAL TOPICS
 
-// ============ Promise Chaining
-
-// function countSlow(count) {
-//     return new Promise(function(res) {
-//         setTimeout(function() {
-//             console.log(count);
-//             res(++count);
-//         }, 500);
-//     });
-// }
-//
-// countSlow(1)
-//     .then(countSlow)
-//     .then(countSlow)
-//     .then(countSlow)
-//     .then(countSlow);
-
-
 
 // ============ Promise.resolve() and Promise.reject()
 
@@ -234,13 +239,13 @@
     //     let orderAndPay = new Promise((resolve, reject) => {
     //         setTimeout(function() {
     //             resolve(`Coffee of type ${type} has been ordered and paid for!`);
-    //         }, 2000);
+    //         }, 4000);
     //     });
     //
     //     let makeOrder = new Promise((resolve, reject) => {
     //         setTimeout(function() {
     //             resolve(`Coffee of type ${type} is ready!`);
-    //         }, 4000);
+    //         }, 2000);
     //     });
     //
     //     return Promise.all([orderAndPay, makeOrder]);
@@ -270,9 +275,13 @@
     // const getColor = () => Promise.race([color1Promise, color2Promise]);
     //
     // getColor().then(response => response.json()).then(data => console.log(data));
-    //
 
 
+
+fetch('https://api.github.com/events', {headers: {'Authorization': 'token ' + gitHubToken}})
+    .then(res => res.json())
+    .then(console.log)
+    .catch(console.error);
     
 
 </script>
