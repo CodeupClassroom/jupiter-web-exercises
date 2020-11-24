@@ -30,7 +30,7 @@ function extractDateOfLastPushEvent(events) {
             return new Date(event.created_at).toDateString();
         }
     }
-    return null;
+    return 'No recent pushes';
 }
 
 function lastPushDate(username) {
